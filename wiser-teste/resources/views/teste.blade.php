@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-5">Teste UserObserver</h1>
-
+        <h1 class="mt-5">Teste Observer</h1>
+        <a href="/" class="btn btn-primary mt-3">Voltar à página inicial</a>
         <button id="create" class="btn btn-success mt-3">Criar</button>
         <button id="update" class="btn btn-primary mt-3">Atualizar</button>
         <button id="delete" class="btn btn-danger mt-3">Excluir</button>
