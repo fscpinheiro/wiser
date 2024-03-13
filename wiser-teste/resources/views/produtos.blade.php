@@ -30,7 +30,7 @@
                 @endif
             </div>
         </div>
-        <hr>
+        <br>
         @if ($products->count())
         <table class="table">
             <thead>
@@ -52,6 +52,7 @@
                 @endforeach
             </tbody>
         </table>
+        
     @else
         <p>No products found.</p>
     @endif

@@ -21,3 +21,6 @@ Route::get('/eloquent', [ProductController::class, 'index']);
 //SCOPE
 Route::get('/eloquent/filter', [ProductController::class, 'filterByPrice'])->name('products.filterByPrice');
 Route::get('/eloquent/clear', [ProductController::class, 'clearFilter'])->name('products.clearFilter');
+//PRIMO
+Route::get('/primos', [PrimeController::class, 'index']);
+Route::post('/primos', [PrimeController::class, 'checkPrime'])->name('primo.check');
