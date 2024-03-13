@@ -14,11 +14,18 @@
         <form action="{{ route('primo.check') }}" method="post">
             @csrf
             <label for="number">Número:</label>
-            <input type="number" id="number" name="number" required class="form-control mr-2">
-            <button type="submit" class="btn btn-primary ml-2">Verificar</button>
+            <div class="input-group mb-3">            
+                <input type="number" id="number" name="number" required class="form-control mr-2">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary ml-2">Verificar</button>
+                    <a href="/" class="btn btn-danger">Voltar à página inicial</a>
+                </div>
+            </div>
         </form>
+        <hr>
         @if(isset($number))
             <p>O número {{ $number }} é {{ $isPrime ? 'primo' : 'não primo' }}.</p>
+            <p>Tempo de processamento: {{ $duration }} segundos</p>
         @endif
 </body>
 </html>

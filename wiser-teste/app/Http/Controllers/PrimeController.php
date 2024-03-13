@@ -13,9 +13,14 @@ class PrimeController extends Controller
 
     public function checkPrime(Request $request)
     {
+        $start = microtime(true);
         $number = $request->get('number');
         $isPrime = $this->isPrime($number);
-        return view('primo', ['number' => $number, 'isPrime' => $isPrime]);
+        $end = microtime(true);
+        $duration = $end - $start;
+
+        return view('primo', ['number' => $number, 'isPrime' => $isPrime, 'duration' => $duration]);
+
     }
 
     private function isPrime($number)
