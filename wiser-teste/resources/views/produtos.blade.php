@@ -9,10 +9,14 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-5">Teste Eloquent</h1>
+        <h1 class="mt-5">Teste Eloquent / Scope</h1>
         <hr>
         <a href="/" class="btn btn-primary">Voltar à página inicial</a>
         <button onclick="location.reload();" class="btn btn-secondary">Recarregar página</button>
+        <form action="{{ route('products.filterByPrice') }}" method="get">
+            <input type="number" name="price" value="50">
+            <button class="btn btn-warning" type="submit">Filtrar</button>
+        </form>
         <hr>
         @if ($products->count())
         <table class="table">

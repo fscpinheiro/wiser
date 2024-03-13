@@ -18,3 +18,5 @@ Route::delete('/user/delete', [UserController::class, 'destroy']);
 Route::get('/logs', [UserController::class, 'getLogs']);
 //ELOQUENT
 Route::get('/eloquent', [ProductController::class, 'index']);
+//SCOPE
+Route::get('/eloquent/filter', [ProductController::class, 'filterByPrice'])->name('products.filterByPrice');
