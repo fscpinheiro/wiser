@@ -11,12 +11,25 @@
     <div class="container">
         <h1 class="mt-5">Teste Eloquent / Scope</h1>
         <hr>
-        <a href="/" class="btn btn-primary">Voltar à página inicial</a>
-        <button onclick="location.reload();" class="btn btn-secondary">Recarregar página</button>
-        <form action="{{ route('products.filterByPrice') }}" method="get">
-            <input type="number" name="price" value="50">
-            <button class="btn btn-warning" type="submit">Filtrar</button>
-        </form>
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <a href="/" class="btn btn-primary">Voltar à página inicial</a>
+                <button onclick="location.href='/eloquent';" class="btn btn-secondary ml-2">Recarregar página</button>
+            </div>
+            <div class="col-md-8">
+                <form action="{{ route('products.filterByPrice') }}" method="get" class="form-inline justify-content-end">
+                    <label for="price" class="mr-2">Preço mínimo:</label>
+                    <input type="number" name="price" value="{{ request()->get('price', 0) }}" class="form-control mr-2">
+                    <button class="btn btn-warning" type="submit">Filtrar</button>
+                    <a href="{{ route('products.clearFilter') }}" class="btn btn-danger ml-2">Limpar filtro</a>
+                </form>
+            </div>
+            <div class="col-md-12 text-right">
+                @if(request()->has('price'))
+                    <p class="mt-2">Filtrando produtos com preço maior que: {{ request()->get('price') }}</p>
+                @endif
+            </div>
+        </div>
         <hr>
         @if ($products->count())
         <table class="table">

@@ -20,3 +20,4 @@ Route::get('/logs', [UserController::class, 'getLogs']);
 Route::get('/eloquent', [ProductController::class, 'index']);
 //SCOPE
 Route::get('/eloquent/filter', [ProductController::class, 'filterByPrice'])->name('products.filterByPrice');
+Route::get('/eloquent/clear', [ProductController::class, 'clearFilter'])->name('products.clearFilter');

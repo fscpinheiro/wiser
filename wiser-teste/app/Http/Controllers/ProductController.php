@@ -38,4 +38,10 @@ class ProductController extends Controller
         $products = $query->get();
         return view('produtos', ['products' => $products]);
     }
+
+    public function clearFilter()
+    {
+        Session::forget('category_id');
+        return redirect()->to('/eloquent');
+    }
 }
